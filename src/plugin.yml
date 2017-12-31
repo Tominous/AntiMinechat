@@ -1,0 +1,5 @@
+name: AntiMinechat
+version: 2.1
+description: Anti Minechat
+author: MrWouter
+main: me.wouter.antiminechat.Main
