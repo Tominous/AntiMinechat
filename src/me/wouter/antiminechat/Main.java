@@ -10,6 +10,7 @@ public class Main extends JavaPlugin {
 	
 	public void onEnable() { 
 		pl = this;
+		
 		getConfig().addDefault("Minechat.Kick", false);
 		getConfig().addDefault("Minechat.Message", true);
 		getConfig().addDefault("PickaxeChat.Kick", false);
@@ -19,7 +20,9 @@ public class Main extends JavaPlugin {
 		getConfig().addDefault("WarnMessage", "&cPlease stop using mobile chat apps.");
 		getConfig().addDefault("MoveMessage", "&cYou need to move if you want to talk.");
 		getConfig().options().copyDefaults(true);
-        saveConfig();
+        	
+		saveConfig();
+		
 		Bukkit.getPluginManager().registerEvents(new Chat(), this);
 		Bukkit.getPluginManager().registerEvents(new Movement(), this);
 	}
