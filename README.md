@@ -13,4 +13,4 @@ To do list:
 - Ban players using Minechat
 
 Donate:
-- [paypal.me/MrWouter](paypal.me/MrWouter) 
+- [paypal.me/MrWouter](https://paypal.me/MrWouter) 
