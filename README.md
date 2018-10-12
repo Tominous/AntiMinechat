@@ -10,7 +10,8 @@ Permissions:
 - AntiMineChat.bypass
 
 To do list:
-- Ban players using Minechat
+- ~~Ban players using Minechat~~
+- ~~Ban players using Pickaxechat~~
 
 Donate:
 - [paypal.me/MrWouter](https://paypal.me/MrWouter) 
