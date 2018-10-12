@@ -1,7 +1,9 @@
 package me.wouter.antiminechat;
 
 import java.util.ArrayList;
+import java.util.Date;
 
+import org.bukkit.BanList;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
@@ -18,6 +20,10 @@ public class PunishmentManager {
 						if (Main.pl.getConfig().getBoolean("Minechat.Kick")) {
 							p.kickPlayer(cc(Main.pl.getConfig().getString("KickMessage")));
 						}
+						if (Main.pl.getConfig().getBoolean("Minechat.Banning")) {
+						    Date time = new Date(System.currentTimeMillis()+Main.pl.getConfig().getInt("Ban.Time")*60*1000);
+						    Bukkit.getBanList(BanList.Type.NAME).addBan(p.getName(), Main.pl.getConfig().getString("Ban.Reason"), time, "Banned by AntiMineChat plugin from MrWouter, creator of MinetopiaSDB.");
+                        }
 						if (Main.pl.getConfig().getBoolean("Minechat.Message")) {
 							p.sendMessage(cc(Main.pl.getConfig().getString("WarnMessage")));
 						}
@@ -25,7 +31,11 @@ public class PunishmentManager {
 						if (Main.pl.getConfig().getBoolean("PickaxeChat.Kick")) {
 							p.kickPlayer(cc(Main.pl.getConfig().getString("KickMessage")));
 						}
-						if (Main.pl.getConfig().getBoolean("PickaxeChat.Message")) {
+                        if (Main.pl.getConfig().getBoolean("PickaxeChat.Banning")) {
+                            Date time = new Date(System.currentTimeMillis()+Main.pl.getConfig().getInt("Ban.Time")*60*1000);
+                            Bukkit.getBanList(BanList.Type.NAME).addBan(p.getName(), Main.pl.getConfig().getString("Ban.Reason"), time, "Banned by AntiMineChat plugin from MrWouter, creator of MinetopiaSDB.");
+                        }
+                        if (Main.pl.getConfig().getBoolean("PickaxeChat.Message")) {
 							p.sendMessage(cc(Main.pl.getConfig().getString("WarnMessage")));
 						}
 					} else if (type == PunishmentType.MOVEMENT) {
